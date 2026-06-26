@@ -122,7 +122,7 @@ def get_gemini_response(prompt: str, system_context: str = "") -> str:
     client = genai.Client(api_key=api_key); model = client
 
     full_prompt = f"{system_context}\n\n{prompt}" if system_context else prompt
-    response = client.models.generate_content(model="gemini-1.5-flash", contents=full_prompt)
+    response = client.models.generate_content(model="gemini-2.0-flash-lite", contents=full_prompt)
     return response.text
 
 def clean_json_response(text: str) -> str:
